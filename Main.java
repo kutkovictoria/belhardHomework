@@ -61,31 +61,24 @@ public class Main {
     }
 
     public static void getTvChannel() {
-        String[] channels = new String[11];
-        channels[0] = "";
-        channels[1] = "BBC";
-        channels[2] = "National Geographic";
-        channels[3] = "FOX";
-        channels[4] = "HBO";
-        channels[5] = "History";
-        channels[6] = "NRJ 12";
-        channels[7] = "Discovery Channel";
-        channels[8] = "CNN";
-        channels[9] = "Disney Junior";
-        channels[10] = "EuroNews";
+        String[] channels = new String[10];
+        channels[0] = "BBC";
+        channels[1] = "National Geographic";
+        channels[2] = "FOX";
+        channels[3] = "HBO";
+        channels[4] = "History";
+        channels[5] = "NRJ 12";
+        channels[6] = "Discovery Channel";
+        channels[7] = "CNN";
+        channels[8] = "Disney Junior";
+        channels[9] = "EuroNews";
 
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter a channel number: ");
-        int userInput = scanner.nextInt();
-
+        int userInput = new Scanner(System.in).nextInt();
         if (userInput == 0) {
             System.out.println("TV is turned off");
         } else {
-            for (int i = 0; i < channels.length; i++) {
-                if (userInput == i) {
-                    System.out.printf("channel %d: %s\n", i, channels[i]);
-                }
-            }
+            System.out.printf("channel %d: %s\n", userInput, channels[userInput - 1]);
         }
     }
 }
