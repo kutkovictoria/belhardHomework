@@ -12,8 +12,8 @@ public class Car {
         this.priceInUsd = priceInUsd;
     }
 
-    void printInfo(){
-        System.out.printf("\nCar brand: %s\nCar color: %s\nCar engine type: %s\nCar engine capacity: %s\nCar price: %f USD\n----",
+    public void printInfo(){
+        System.out.printf("\nvehicle.Car brand: %s\nvehicle.Car color: %s\nvehicle.Car engine type: %s\nvehicle.Car engine capacity: %s\nvehicle.Car price: %f USD\n----",
                 brand, color, engine.getType(), engine.getCapacity(), priceInUsd);
     }
 }
