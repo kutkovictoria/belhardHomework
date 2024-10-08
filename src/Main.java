@@ -92,8 +92,8 @@ public class Main {
         } else {
             System.out.printf("channel %d: %s\n", userInput, channels[userInput - 1]);
         }
-      
-        public static void getInfoAboutMe() {
+    }
+    public static void getInfoAboutMe() {
         String myFirstName = "Victoria";
         String myLastName = "Kutko";
         String myProfession = "QA manual";
@@ -101,9 +101,9 @@ public class Main {
         String infoAboutMe = String.format("My first name is %s\n My last name is %s\n My profession is %s\n",
                 myFirstName, myLastName, myProfession);
         System.out.println(infoAboutMe);
-        }
+    }
 
-        public static void getPrimitiveDataTypes() {
+    public static void getPrimitiveDataTypes() {
         byte myByte = 127;
         short myShort = 32000;
         int myInt = 1000000000;
@@ -120,9 +120,9 @@ public class Main {
         System.out.println("myDouble is: " + myDouble);
         System.out.println("myBoolean is: " + myBoolean);
         System.out.println("myChar is: " + myChar);
-                                            }
+    }
 
-        public static void useStringMethodsAndScanner() {
+    public static void useStringMethodsAndScanner() {
         Scanner scanner = new Scanner(System.in);
         String riflemanCreed = "My rifle is my best friend. It is my life.";
         System.out.println("Please enter any text: ");
@@ -139,6 +139,5 @@ public class Main {
         System.out.println("Does your text end with \"life\"? " + userInput.endsWith("life"));
         System.out.println("Does your text contains \"friend\"? " + userInput.contains("friend"));
         System.out.println("Replace \"rifle\" by \"dog\": " + userInput.replace("rifle", "dog"));
-                                                   }
-   
+    }
 }
