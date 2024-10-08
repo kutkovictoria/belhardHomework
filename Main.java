@@ -2,7 +2,88 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //info about me:
+
+        //getUserScore();
+        //whileOperatorEndlessCycle();
+        //sumOfNumbers();
+        getTvChannel();
+       //getInfoAboutMe()
+      //getPrimitiveDataTypes()
+    }
+
+    public static void getUserScore() {
+        System.out.print("Please enter your score: ");
+        Scanner scanner = new Scanner(System.in);
+        int userScore = scanner.nextInt();
+
+        while (userScore < 0 || userScore > 100) {
+            System.out.print("Your input is invalid! Please enter only numbers from 0 to 100: ");
+            userScore = scanner.nextInt();
+        }
+        if (userScore >= 70) {
+            System.out.println("You get an A!");
+        } else if (userScore >= 50) {
+            System.out.println("You get a B!");
+        } else if (userScore >= 30) {
+            System.out.println("You get a C!");
+        } else {
+            System.out.println("You get a D!");
+        }
+    }
+
+    public static void whileOperatorEndlessCycle() {
+        String userInput = "";
+        Scanner scanner = new Scanner(System.in);
+
+        while (!userInput.equalsIgnoreCase("Exit")) {
+            System.out.print("Please enter something: ");
+            userInput = scanner.next();
+        }
+        System.out.println("Thanks, bye!");
+    }
+
+    public static void sumOfNumbers() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please enter a number: ");
+
+        int userInput = scanner.nextInt();
+        int sum = 0;
+
+        if (userInput >= 0) {
+            for (int i = 0; i <= userInput; i++) {
+                sum += i;
+            }
+            System.out.printf("Sum of numbers from 0 to %d is %d", userInput, sum);
+        } else {
+            for (int i = 0; i >= userInput; i--) {
+                sum += i;
+            }
+            System.out.printf("Sum of numbers from 0 to %d is %d", userInput, sum);
+        }
+    }
+
+    public static void getTvChannel() {
+        String[] channels = new String[10];
+        channels[0] = "BBC";
+        channels[1] = "National Geographic";
+        channels[2] = "FOX";
+        channels[3] = "HBO";
+        channels[4] = "History";
+        channels[5] = "NRJ 12";
+        channels[6] = "Discovery Channel";
+        channels[7] = "CNN";
+        channels[8] = "Disney Junior";
+        channels[9] = "EuroNews";
+
+        System.out.print("Please enter a channel number: ");
+        int userInput = new Scanner(System.in).nextInt();
+        if (userInput == 0) {
+            System.out.println("TV is turned off");
+        } else {
+            System.out.printf("channel %d: %s\n", userInput, channels[userInput - 1]);
+        }
+      
+        public static void getInfoAboutMe() {
         String myFirstName = "Victoria";
         String myLastName = "Kutko";
         String myProfession = "QA manual";
@@ -10,8 +91,9 @@ public class Main {
         String infoAboutMe = String.format("My first name is %s\n My last name is %s\n My profession is %s\n",
                 myFirstName, myLastName, myProfession);
         System.out.println(infoAboutMe);
+        }
 
-        //Primitive Data Types:
+        public static void getPrimitiveDataTypes() {
         byte myByte = 127;
         short myShort = 32000;
         int myInt = 1000000000;
@@ -28,8 +110,9 @@ public class Main {
         System.out.println("myDouble is: " + myDouble);
         System.out.println("myBoolean is: " + myBoolean);
         System.out.println("myChar is: " + myChar);
+                                            }
 
-        // Scanner + String methods:
+        public static void useStringMethodsAndScanner() {
         Scanner scanner = new Scanner(System.in);
         String riflemanCreed = "My rifle is my best friend. It is my life.";
         System.out.println("Please enter any text: ");
@@ -46,5 +129,6 @@ public class Main {
         System.out.println("Does your text end with \"life\"? " + userInput.endsWith("life"));
         System.out.println("Does your text contains \"friend\"? " + userInput.contains("friend"));
         System.out.println("Replace \"rifle\" by \"dog\": " + userInput.replace("rifle", "dog"));
-    }
+                                                   }
+   
 }
