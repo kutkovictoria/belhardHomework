@@ -1,3 +1,7 @@
+import vehicles.cars.Car;
+import vehicles.cars.Engine;
+import vehicles.lorries.Lorry;
+
 import java.util.Scanner;
 
 public class Main {
@@ -6,11 +10,17 @@ public class Main {
         Engine pertolEngine1_8 = new Engine("petrol", 1.8);
         Engine dieselEngine2_0 = new Engine("diesel", 2.0);
 
-        Car audi = new Car("audi", "black", pertolEngine1_8, 20.5);
-        Car bmw = new Car("bmw", "silver",dieselEngine2_0, 30.2);
+        Car audi = new Car("audi", "black", pertolEngine1_8, 20, "passenger");
+        Car bmw = new Car("bmw", "silver", dieselEngine2_0, 30, "passenger");
 
-        audi.printInfo();
-        bmw.printInfo();
+        audi.printCarInfo();
+        bmw.printCarInfo();
+
+        Lorry tanker = new Lorry("MAZ", 40, "cargo", 11, 20, "tanker");
+        Lorry dumperTruck = new Lorry("mercedes", 50, "cargo", 15, 30, "dumperTruck");
+
+        tanker.printLorryInfo();
+        dumperTruck.printLorryInfo();
 
 
         //getUserScore();
@@ -93,6 +103,7 @@ public class Main {
             System.out.printf("channel %d: %s\n", userInput, channels[userInput - 1]);
         }
     }
+
     public static void getInfoAboutMe() {
         String myFirstName = "Victoria";
         String myLastName = "Kutko";
