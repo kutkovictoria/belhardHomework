@@ -7,12 +7,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CarInfoStorage {
+public class UserCarInfoStorage {
 
     public static void startCarInfoStorage() {
-        //displayMenu();
         manageUserInput();
-
     }
 
     public static void displayMenu() {
@@ -24,15 +22,18 @@ public class CarInfoStorage {
     }
 
     public static void manageUserInput() {
-        String userInput;
-        Scanner scanner = new Scanner(System.in);
+       String userInput;
+       Scanner scanner = new Scanner(System.in);
 
         do {
             displayMenu();
             userInput = scanner.nextLine();
             switch (userInput) {
                 case "1" -> enterCarInfo(scanner);
-                case "2" -> System.out.println("2");
+                case "2" -> {
+                    getCarInfo();
+                    break;
+                }
                 case "0" -> System.out.println("Program has been closed. Bye!");
                 default -> System.out.print("Sorry, invalid input! Please try again.\n");
             }
@@ -51,13 +52,13 @@ public class CarInfoStorage {
         String color = scanner.nextLine();
         FileWriter file;
         try {
-            file = new FileWriter("D:\\belhard\\my_new_car.txt");
+            file = new FileWriter("D:\\belhard\\user_car_info.txt");
             file.write("Car brand: " + brand);
             file.write("\nEngine type: " + engineType);
             file.write("\nCar price in USD: " + priceInUsd);
             file.write("\nCar color: " + color);
             file.close();
-            System.out.println("The data has been save.\nPlease make another choice.");
+            System.out.println("The data has been saved.\nPlease make another choice.");
         } catch (IOException e) {
             System.out.println("Sorry, cannot write to file. Error message: " + e.getMessage());
         }
@@ -65,7 +66,7 @@ public class CarInfoStorage {
 
     public static void getCarInfo() {
         try {
-            File file = new File("D:\\belhard\\my_new_car.txt");
+            File file = new File("D:\\belhard\\user_car_info.txt");
             Scanner fileScanner = new Scanner(file);
             ArrayList<String> dataFromFile = new ArrayList<>();
             while (fileScanner.hasNext()) {
@@ -73,7 +74,7 @@ public class CarInfoStorage {
             }
             dataFromFile.forEach(System.out::println);
         } catch (FileNotFoundException e) {
-            System.out.println("Sorry, no such file");
+            System.out.println("Sorry, no such file.\nPlease select option 1 first.");
         }
     }
 }

@@ -1,4 +1,4 @@
-import vehicles.CarInfoStorage;
+import vehicles.UserCarInfoStorage;
 import vehicles.cars.Car;
 import vehicles.cars.Engine;
 import vehicles.cars.EngineType;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        CarInfoStorage.startCarInfoStorage();
+        UserCarInfoStorage.startCarInfoStorage();
 
         //getVehiclesInfo();
         //getUserScore();
