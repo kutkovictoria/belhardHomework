@@ -14,8 +14,7 @@ public class Util {
     }
 
     public static void displayMenu() {
-        System.out.print("Welcome to the car builder program!" +
-                "\nMenu:" +
+        System.out.print("Menu:" +
                 "\n1 - create your car;" +
                 "\n2 - display info about your car;" +
                 "\n0 - exit." +
@@ -29,14 +28,11 @@ public class Util {
         do {
             displayMenu();
             userInput = scanner.nextLine();
-            if (userInput.equals("1")) {
-                System.out.println("1");
-            } else if (userInput.equals("2")) {
-                System.out.println("2");
-            } else if (userInput.equals("0")) {
-                System.out.println("Program has been closed. Bye!");
-            } else {
-                System.out.print("Sorry, invalid input! Please try again.");
+            switch (userInput) {
+                case "1" -> System.out.println("1");
+                case "2" -> System.out.println("2");
+                case "0" -> System.out.println("Program has been closed. Bye!");
+                default -> System.out.print("Sorry, invalid input! Please try again.\n");
             }
         }
         while (!userInput.equals("0"));
