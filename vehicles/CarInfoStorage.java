@@ -1,3 +1,5 @@
+package vehicles;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -5,9 +7,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Util {
+public class CarInfoStorage {
 
-    public static void startCarBuilderProgram() {
+    public static void startCarInfoStorage() {
         //displayMenu();
         manageUserInput();
 
@@ -38,10 +40,10 @@ public class Util {
         while (!userInput.equals("0"));
     }
 
-    public static void createCarInfo() {
+    public static void enterCarInfo() {
         FileWriter file;
         try {
-            file = new FileWriter("D:\\belhard\\my_new_car.txt", true);
+            file = new FileWriter("D:\\belhard\\my_new_car.txt");
             file.write("newest file data\n");
             file.write("newest file data\n");
             file.close();
