@@ -1,5 +1,6 @@
 import vehicles.cars.Car;
 import vehicles.cars.Engine;
+import vehicles.cars.EngineType;
 import vehicles.lorries.Lorry;
 
 import java.util.Scanner;
@@ -7,8 +8,22 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Engine pertolEngine1_8 = new Engine("petrol", 1.8);
-        Engine dieselEngine2_0 = new Engine("diesel", 2.0);
+
+        Util.startCarBuilderProgram();
+
+        //getVehiclesInfo();
+        //getUserScore();
+        //whileOperatorEndlessCycle();
+        //sumOfNumbers();
+        //getTvChannel();
+        //getInfoAboutMe()
+        //getPrimitiveDataTypes()
+    }
+
+    public static void getVehiclesInfo() {
+
+        Engine pertolEngine1_8 = new Engine(EngineType.GAZ, 1.8);
+        Engine dieselEngine2_0 = new Engine(EngineType.DIESEL, 2.0);
 
         Car audi = new Car("audi", "black", pertolEngine1_8, 20, "passenger");
         Car bmw = new Car("bmw", "silver", dieselEngine2_0, 30, "passenger");
@@ -22,13 +37,6 @@ public class Main {
         tanker.printLorryInfo();
         dumperTruck.printLorryInfo();
 
-
-        //getUserScore();
-        //whileOperatorEndlessCycle();
-        //sumOfNumbers();
-        //getTvChannel();
-        //getInfoAboutMe()
-        //getPrimitiveDataTypes()
     }
 
     public static void getUserScore() {

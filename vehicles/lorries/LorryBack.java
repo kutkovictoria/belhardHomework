@@ -1,8 +1,8 @@
 package vehicles.lorries;
 
 public class LorryBack {
-    double loryBackSize;
-    String lorryBackType;
+    private double loryBackSize;
+    private String lorryBackType;
 
     public LorryBack(double loryBackSize, String lorryBackType) {
         this.loryBackSize = loryBackSize;

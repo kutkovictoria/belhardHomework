@@ -2,15 +2,15 @@ package vehicles.cars;
 
 public class Engine {
 
-    private String engineType;
+    private EngineType engineType;
     private double engineCapacity;
 
-    public Engine(String type, double capacity) {
-        this.engineType = type;
-        this.engineCapacity = capacity;
+    public Engine(EngineType engineType, double engineCapacity) {
+        this.engineType = engineType;
+        this.engineCapacity = engineCapacity;
     }
 
-    public String getEngineType() {
+    public EngineType getEngineType() {
         return engineType;
     }
 

@@ -23,7 +23,7 @@ public class Lorry extends VehiclesItem {
         this.lorryBack = new LorryBack(lorryBackSize, lorryBackType);
     }
 
-    public void printLorryInfo(){
+    public void printLorryInfo() {
         System.out.printf("\nLorry brand: %s\nLorry load capacity: %f\nLorry back size: %f\n" +
                         "Lorry back type: %s\nLorry price: %f USD\nVehicles type: %s\n----",
                 brand, loadCapacity, lorryBack.getLoryBackSize(), lorryBack.getLorryBackType(), priceInUsd, vehiclesType);

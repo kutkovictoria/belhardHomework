@@ -15,7 +15,7 @@ public class Car extends VehiclesItem {
         this.vehiclesType = vehiclesType;
     }
 
-    public void printCarInfo(){
+    public void printCarInfo() {
         System.out.printf("\nCar brand: %s\nCar color: %s\nCar engine type: %s\n" +
                         "Car engine capacity: %f\nCar price: %f USD\nVehicles type: %s\n----",
                 brand, color, engine.getEngineType(), engine.getEngineCapacity(), priceInUsd, vehiclesType);
