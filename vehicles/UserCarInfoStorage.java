@@ -15,7 +15,7 @@ public class UserCarInfoStorage {
 
     public static void displayMenu() {
         System.out.print("Menu:" +
-                "\n1 - create your car;" +
+                "\n1 - enter your car data;" +
                 "\n2 - display info about your car;" +
                 "\n0 - exit." +
                 "\nPlease select an option: ");
@@ -74,7 +74,7 @@ public class UserCarInfoStorage {
             }
             dataFromFile.forEach(System.out::println);
         } catch (FileNotFoundException e) {
-            System.out.println("Sorry, no such file.\nPlease select option 1 first.");
+            System.out.println("Sorry, you haven't entered your data yet.\nPlease select option 1 first.");
         }
     }
 }
