@@ -31,7 +31,7 @@ public class CarInfoStorage {
             displayMenu();
             userInput = scanner.nextLine();
             switch (userInput) {
-                case "1" -> System.out.println("1");
+                case "1" -> enterCarInfo(scanner);
                 case "2" -> System.out.println("2");
                 case "0" -> System.out.println("Program has been closed. Bye!");
                 default -> System.out.print("Sorry, invalid input! Please try again.\n");
@@ -40,15 +40,26 @@ public class CarInfoStorage {
         while (!userInput.equals("0"));
     }
 
-    public static void enterCarInfo() {
+    public static void enterCarInfo(Scanner scanner) {
+        System.out.print("Enter car brand: ");
+        String brand = scanner.nextLine();
+        System.out.print("Enter engine type: ");
+        String engineType = scanner.nextLine();
+        System.out.print("Enter car price in USD: ");
+        String priceInUsd = scanner.nextLine();
+        System.out.print("Enter car color: ");
+        String color = scanner.nextLine();
         FileWriter file;
         try {
             file = new FileWriter("D:\\belhard\\my_new_car.txt");
-            file.write("newest file data\n");
-            file.write("newest file data\n");
+            file.write("Car brand: " + brand);
+            file.write("\nEngine type: " + engineType);
+            file.write("\nCar price in USD: " + priceInUsd);
+            file.write("\nCar color: " + color);
             file.close();
+            System.out.println("The data has been save.\nPlease make another choice.");
         } catch (IOException e) {
-            System.out.println("Sorry, cannot wrie to file. Dull error message: " + e.getMessage());
+            System.out.println("Sorry, cannot write to file. Error message: " + e.getMessage());
         }
     }
 
