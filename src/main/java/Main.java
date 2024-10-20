@@ -3,7 +3,6 @@ import vehicles.cars.Car;
 import vehicles.cars.Engine;
 import vehicles.cars.EngineType;
 import vehicles.lorries.Lorry;
-
 import java.util.Scanner;
 
 public class Main {
