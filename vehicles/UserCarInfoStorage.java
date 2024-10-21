@@ -37,8 +37,7 @@ public class UserCarInfoStorage {
                 case "0" -> System.out.println("Program has been closed. Bye!");
                 default -> System.out.print("Sorry, invalid input! Please try again.\n");
             }
-        }
-        while (!userInput.equals("0"));
+        } while (!userInput.equals("0"));
     }
 
     public static void enterCarInfo(Scanner scanner) {
