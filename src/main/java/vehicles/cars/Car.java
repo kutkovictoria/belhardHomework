@@ -5,7 +5,7 @@ import vehicles.VehiclesItem;
 public class Car extends VehiclesItem {
 
     private String color;
-    private Engine engine; //
+    private Engine engine;
 
     public Car(String brand, String color, Engine engine, double priceInUsd, String vehiclesType) {
         this.brand = brand;
@@ -13,6 +13,13 @@ public class Car extends VehiclesItem {
         this.engine = engine;
         this.priceInUsd = priceInUsd;
         this.vehiclesType = vehiclesType;
+    }
+    public String getColor() {
+        return color;
+    }
+
+    public Engine getEngine() {
+        return engine;
     }
 
     public void printCarInfo() {
