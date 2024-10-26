@@ -8,6 +8,12 @@ public class Car extends VehiclesItem {
     private Engine engine;
 
     public Car(String brand, String color, Engine engine, double priceInUsd, String vehiclesType) {
+        if (brand == null || color == null || engine == null || vehiclesType == null) {
+            throw new NullPointerException("None of the fields can be null.");
+        }
+        if (priceInUsd < 0) {
+            throw new IllegalArgumentException("Price must be greater than zero.");
+        }
         this.brand = brand;
         this.color = color;
         this.engine = engine;
