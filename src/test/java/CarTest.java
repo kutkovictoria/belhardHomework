@@ -1,10 +1,10 @@
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import vehicles.cars.Engine;
 import vehicles.cars.Car;
 
 import static vehicles.cars.EngineType.DIESEL;
 import static vehicles.cars.EngineType.HYBRID;
-import static org.testng.Assert.*;
 
 public class CarTest {
 
@@ -18,12 +18,14 @@ public class CarTest {
 
         Car car = new Car(expectedBrand, expectedColor, expectedEngine, expectedPrice, expectedVehicleType);
 
-        assertEquals(car.getBrand(), expectedBrand, "Expected brand is BMW ");
-        assertEquals(car.getColor(), expectedColor, "Expected color is Black ");
-        assertEquals(car.getEngine().getEngineType(), expectedEngine.getEngineType(), "Engine type is DIESEL");
-        assertEquals(car.getEngine().getEngineCapacity(), expectedEngine.getEngineCapacity(), "Engine capacity is 2.0");
-        assertEquals(car.getPriceInUsd(), expectedPrice, "Expected price is 30000 ");
-        assertEquals(car.getVehiclesType(), expectedVehicleType, "Expected vehicle type is passenger");
+        SoftAssert soft = new SoftAssert();
+        soft.assertEquals(car.getBrand(), expectedBrand, "Expected brand is BMW ");
+        soft.assertEquals(car.getColor(), expectedColor, "Expected color is Black ");
+        soft.assertEquals(car.getEngine().getEngineType(), expectedEngine.getEngineType(), "Engine type is DIESEL");
+        soft.assertEquals(car.getEngine().getEngineCapacity(), expectedEngine.getEngineCapacity(), "Engine capacity is 2.0");
+        soft.assertEquals(car.getPriceInUsd(), expectedPrice, "Expected price is 30000 ");
+        soft.assertEquals(car.getVehiclesType(), expectedVehicleType, "Expected vehicle type is passenger");
+        soft.assertAll();
     }
 
 
